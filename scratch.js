@@ -20,11 +20,11 @@ await header.click()
 }
 catch(e){
   const data = {}
-  data.scratch = "Video Link is broken"
+  data.scratch = "Scratch Link is broken"
   return data
 }
 
-await page.waitForTimeout(10000);
+await page.waitForTimeout(5000);
 
 try {
     const header = await page.waitForSelector(".monitor-list_monitor-list_20k-y", { timeout: 3000 });

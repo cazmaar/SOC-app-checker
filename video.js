@@ -50,7 +50,7 @@ try {
             return data
           }
     }
-    await page.waitForTimeout(10000);
+    await page.waitForTimeout(5000);
     
     const status = await page.evaluate(async () => {
         const video = document.querySelector('video');
