@@ -92,7 +92,7 @@ async function convertCsvToJson() {
       ]
     });
 
-    const mappedData = [];
+    // const mappedData = [];
     for (const row of jsonData) {
       const videoRes = await video.video(row);
       const avatarRes = await avatar.avatar(row);
@@ -100,10 +100,10 @@ async function convertCsvToJson() {
       const result = { ...videoRes, ...avatarRes, ...scratchRes };
       console.log(result)
 
-      mappedData.push(result);
-    }
+    
 
-    await csvWriter.writeRecords(mappedData);
+    await csvWriter.writeRecords([result]);
+    }
 
     console.log(`CSV file written to ${outputCsvFilePath}`);
   } catch (err) {
