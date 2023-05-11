@@ -1,7 +1,3 @@
-const { chromium } = require('playwright');
-// const browser = await chromium.launch({ headless: true });
-
-
 const video = async (row,browser)=>{
 const page = await browser.newPage();
 

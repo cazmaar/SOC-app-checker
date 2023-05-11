@@ -1,18 +1,20 @@
+const { chromium } = require('playwright');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const csv = require('csvtojson');
+const fs = require('fs').promises;
+
 const csvFilePath = 'kaz.csv';
 const outputFilePath = 'output.json';
 const outputCsvFilePath = 'result.csv';
-const { chromium } = require('playwright');
 
 
-const {video,avatar,scratch} = require('./video');
+const {video,avatar,scratch} = require('./allCategories');
 
-const csv = require('csvtojson');
-const fs = require('fs').promises;
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 
 async function convertCsvToJson() {
   const browser = await chromium.launch({ headless: true });
+  
   try {
     const jsonObj = await csv().fromFile(csvFilePath);
 
