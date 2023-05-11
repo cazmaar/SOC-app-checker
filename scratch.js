@@ -24,7 +24,7 @@ catch(e){
   return data
 }
 
-await page.waitForTimeout(5000);
+await page.waitForTimeout(10000);
 
 try {
     const header = await page.waitForSelector(".monitor-list_monitor-list_20k-y", { timeout: 3000 });
